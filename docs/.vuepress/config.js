@@ -10,13 +10,17 @@ module.exports = {
         text: '首页',
         link: '/'
       },
-      {
-        text: '组件',
-        link: '/comps/'
-      },
+      // {
+      //   text: '组件',
+      //   link: '/comps/'
+      // },
       {
         text: 'pytorch',
         link: '/pytorch/'
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/DarrenYing/vuepress-element-doc'
       }
     ],
     sidebar: {

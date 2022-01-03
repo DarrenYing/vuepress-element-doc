@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pytorch分布式训练简介 | Pytorch Distributed Training Tutorial</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="使用Pytorch分布式训练的示例代码">
+    
+    <link rel="preload" href="/assets/css/0.styles.262ade0c.css" as="style"><link rel="preload" href="/assets/js/app.10116606.js" as="script"><link rel="preload" href="/assets/js/2.074008b5.js" as="script"><link rel="preload" href="/assets/js/15.1fe9d286.js" as="script"><link rel="prefetch" href="/assets/js/10.83cfe51a.js"><link rel="prefetch" href="/assets/js/11.d0af463f.js"><link rel="prefetch" href="/assets/js/12.401d4db2.js"><link rel="prefetch" href="/assets/js/13.481f27e7.js"><link rel="prefetch" href="/assets/js/14.25cd57c8.js"><link rel="prefetch" href="/assets/js/16.1128fa1c.js"><link rel="prefetch" href="/assets/js/3.dfffe9d2.js"><link rel="prefetch" href="/assets/js/4.73c9d461.js"><link rel="prefetch" href="/assets/js/5.0857751a.js"><link rel="prefetch" href="/assets/js/6.ca83e7e8.js"><link rel="prefetch" href="/assets/js/7.29bf9295.js"><link rel="prefetch" href="/assets/js/8.5bc1f666.js"><link rel="prefetch" href="/assets/js/9.9f74d9b1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.262ade0c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pytorch Distributed Training Tutorial</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/comps/" class="nav-link">
+  组件
+</a></div><div class="nav-item"><a href="/pytorch/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  pytorch
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/comps/" class="nav-link">
+  组件
+</a></div><div class="nav-item"><a href="/pytorch/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  pytorch
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>分布式训练</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pytorch/" aria-current="page" class="active sidebar-link">Pytorch分布式训练简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pytorch/#dataparallel" class="sidebar-link">DataParallel</a></li><li class="sidebar-sub-header"><a href="/pytorch/#distributeddataparallel" class="sidebar-link">DistributedDataParallel</a></li></ul></li><li><a href="/pytorch/Use-DistributedDataParallel.html" class="sidebar-link">使用Pytorch进行分布式训练</a></li><li><a href="/pytorch/Issue-Record.html" class="sidebar-link">常见问题记录和解答</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="pytorch分布式训练简介"><a href="#pytorch分布式训练简介" class="header-anchor">#</a> Pytorch分布式训练简介</h1> <h2 id="dataparallel"><a href="#dataparallel" class="header-anchor">#</a> DataParallel</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">torch</span><span class="token punctuation">.</span>nn<span class="token punctuation">.</span>DataParallel<span class="token punctuation">(</span>module<span class="token punctuation">,</span> device_ids<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> output_device<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> dim<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><ul><li><p>自动分割数据，将相同的模型复制到所有GPU，每个GPU消耗输入数据的不同分区</p></li> <li><p>通过单进程、多线程方式并行训练，受限于python的GIL</p></li> <li><p>只支持数据并行，性能不佳</p></li> <li><p>网络在<strong>前向传播</strong>的时候会将model从主卡(默认是逻辑0卡)复制一份到所有的device上,input_data会在batch这个维度被分组后upload到不同的device上计算。在<strong>反向传播</strong>时，每个卡上的梯度会汇总到主卡上,求得梯度的均值后,再用反向传播更新单个GPU上的模型参数，最后将更新后的模型参数复制到剩余指定的GPU中进行下一轮的前向传播,以此来实现并行。</p></li></ul></blockquote> <h2 id="distributeddataparallel"><a href="#distributeddataparallel" class="header-anchor">#</a> DistributedDataParallel</h2> <div class="language-python extra-class"><pre class="language-python"><code>CLASS <span class="token class-name">torch</span><span class="token punctuation">.</span>nn<span class="token punctuation">.</span>parallel<span class="token punctuation">.</span>DistributedDataParallel<span class="token punctuation">(</span>module<span class="token punctuation">,</span> device_ids<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> 
+    output_device<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> dim<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> broadcast_buffers<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> process_group<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> 
+    bucket_cap_mb<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">,</span> find_unused_parameters<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> check_reduction<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> 
+    gradient_as_bucket_view<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><ul><li><p>支持数据并行和模型并行</p></li> <li><p>多进程并行训练，不受限于python的GIL</p></li> <li><p>DDP在各进程梯度计算完成之后,各进程需要将梯度进行汇总平均,然后再由 <code>rank=0</code> 的进程,将其 <code>broadcast</code> 到所有进程后,各进程用该梯度来独立的更新参数，相较于DP, DDP传输的数据量更少,因此速度更快,效率更高。</p></li> <li><p>效率较高，更推荐使用。CPU训练使用GLOO，GPU训练使用NCCL。</p></li></ul></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pytorch/Use-DistributedDataParallel.html">
+        使用Pytorch进行分布式训练
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.10116606.js" defer></script><script src="/assets/js/2.074008b5.js" defer></script><script src="/assets/js/15.1fe9d286.js" defer></script>
+  </body>
+</html>

@@ -43,6 +43,7 @@ module.exports = {
             '/pytorch/',
             '/pytorch/Use-DistributedDataParallel.md',
             '/pytorch/Issue-Record.md',
+            '/pytorch/MultiNode-Distributed.md',
           ]
         },
       ]

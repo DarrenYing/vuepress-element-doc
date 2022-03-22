@@ -10,10 +10,10 @@ module.exports = {
         text: '首页',
         link: '/'
       },
-      // {
-      //   text: '组件',
-      //   link: '/comps/'
-      // },
+      {
+        text: '组件',
+        link: '/comps/'
+      },
       {
         text: 'pytorch',
         link: '/pytorch/'
@@ -44,6 +44,8 @@ module.exports = {
             '/pytorch/Use-DistributedDataParallel.md',
             '/pytorch/Issue-Record.md',
             '/pytorch/MultiNode-Distributed.md',
+            '/pytorch/SeaweedFS-Dataset.md',
+            '/pytorch/Submit-Project-Task.md',
           ]
         },
       ]

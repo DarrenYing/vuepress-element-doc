@@ -1,7 +1,7 @@
 module.exports = {
   theme: '',
   title: 'Pytorch Distributed Training Tutorial',
-  description: '使用Pytorch分布式训练的示例代码',
+  description: '使用ICES网盘系统进行分布式训练',
   base: '/',
   port: '8080',
   themeConfig: {
@@ -44,7 +44,7 @@ module.exports = {
             '/pytorch/Use-DistributedDataParallel.md',
             '/pytorch/Issue-Record.md',
             '/pytorch/MultiNode-Distributed.md',
-            '/pytorch/SeaweedFS-Dataset.md',
+            '/pytorch/MinIO-Dataset.md',
             '/pytorch/Submit-Project-Task.md',
           ]
         },

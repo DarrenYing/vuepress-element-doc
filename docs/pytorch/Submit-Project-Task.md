@@ -10,8 +10,12 @@
 > * 启动命令
 >   * 如需要安装包再执行
 >   ```
->   pip install -r requirements.txt && python -m torch.distributed.launch --nproc_per_node=1 --nnodes=1 cifar10_test.py
+>   pip install -r requirements.txt && python -m torch.distributed.launch --nproc_per_node=1 --nnodes=1 main.py
 >   ```
+>   * 对于一般任务，需要使用 -u 参数以确保日志正常显示
+>   ```
+>   python -u main.py
+>   ``` 
 > * 选择镜像
 >   * pytorch/pytorch:1.10-cuda11.3-cudnn8-runtime
 >      > extends the base image by adding all the shared libraries from the CUDA toolkit.

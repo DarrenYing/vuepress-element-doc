@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自定义数据集 | ICES Distributed Training System Tutorial</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="ICES分布式训练系统帮助文档">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.5d9619c0.css" as="style"><link rel="preload" href="/docs/assets/js/app.7d404fe5.js" as="script"><link rel="preload" href="/docs/assets/js/2.5978a520.js" as="script"><link rel="preload" href="/docs/assets/js/11.62fc12c3.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.16d4f38b.js"><link rel="prefetch" href="/docs/assets/js/12.d57768af.js"><link rel="prefetch" href="/docs/assets/js/13.4903afad.js"><link rel="prefetch" href="/docs/assets/js/14.3da1e842.js"><link rel="prefetch" href="/docs/assets/js/15.ce20a153.js"><link rel="prefetch" href="/docs/assets/js/3.c724ef06.js"><link rel="prefetch" href="/docs/assets/js/4.0d7d8041.js"><link rel="prefetch" href="/docs/assets/js/5.8b141ec4.js"><link rel="prefetch" href="/docs/assets/js/6.654a3df5.js"><link rel="prefetch" href="/docs/assets/js/7.b5fa177a.js"><link rel="prefetch" href="/docs/assets/js/8.29da24fc.js"><link rel="prefetch" href="/docs/assets/js/9.510aac33.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.5d9619c0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">ICES Distributed Training System Tutorial</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/docs/storage/" class="nav-link">
+  ICES网盘
+</a></div><div class="nav-item"><a href="/docs/pytorch/" class="nav-link router-link-active">
+  pytorch
+</a></div><div class="nav-item"><a href="https://github.com/DarrenYing/vuepress-element-doc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/docs/storage/" class="nav-link">
+  ICES网盘
+</a></div><div class="nav-item"><a href="/docs/pytorch/" class="nav-link router-link-active">
+  pytorch
+</a></div><div class="nav-item"><a href="https://github.com/DarrenYing/vuepress-element-doc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>分布式训练</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/pytorch/" aria-current="page" class="sidebar-link">Pytorch分布式训练简介</a></li><li><a href="/docs/pytorch/Use-DistributedDataParallel.html" class="sidebar-link">使用Pytorch进行分布式训练</a></li><li><a href="/docs/pytorch/Issue-Record.html" class="sidebar-link">常见问题记录和解答</a></li><li><a href="/docs/pytorch/MultiNode-Distributed.html" class="sidebar-link">多机多卡训练配置</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="自定义数据集"><a href="#自定义数据集" class="header-anchor">#</a> 自定义数据集</h1> <h2 id="下载seaweedfs的工具文件"><a href="#下载seaweedfs的工具文件" class="header-anchor">#</a> 下载SeaweedFS的工具文件</h2> <p><code>seaweedfs.py</code> 可从<a href="http://10.249.181.72:8079/login?redirect=%2Ffile" target="_blank" rel="noopener noreferrer">此处<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>下载</p> <blockquote><p>其中提供了Client类，包括以下6个方法</p> <ul><li>list_object</li> <li>put_object</li> <li>put_objects</li> <li>get_object</li> <li>delete_object</li> <li>is_dir</li></ul></blockquote> <h2 id="以cifar10数据集为例"><a href="#以cifar10数据集为例" class="header-anchor">#</a> 以Cifar10数据集为例</h2> <blockquote><p>和torchvision.datasets.CIFAR10相比，只需要作两处修改</p> <ul><li>引入seaweedfs <code>from seaweedfs import Client</code></li> <li>将<code>with open(file, mode) as f:</code>替换为<code>with client.get_object(file) as f:</code></li></ul></blockquote> <p>完整示例如下：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token triple-quoted-string string">&quot;&quot;&quot;
+自定义cifar10数据集的读取
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> pickle
+
+
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> torchvision<span class="token punctuation">.</span>transforms <span class="token keyword">as</span> transforms
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data<span class="token punctuation">.</span>dataset <span class="token keyword">import</span> Dataset
+<span class="token keyword">from</span> seaweedfs <span class="token keyword">import</span> Client
+
+client <span class="token operator">=</span> Client<span class="token punctuation">(</span>
+    <span class="token comment"># filer的ip:port</span>
+    filer<span class="token operator">=</span><span class="token string">&quot;localhost:8888&quot;</span>
+<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Cifar10</span><span class="token punctuation">(</span>Dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    base_folder <span class="token operator">=</span> <span class="token string">'cifar-10-batches-py'</span>
+    tgz_md5 <span class="token operator">=</span> <span class="token string">'c58f30108f718f92721af3b95e74349a'</span>
+    train_list <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">[</span><span class="token string">'data_batch_1'</span><span class="token punctuation">,</span> <span class="token string">'c99cafc152244af753f735de768cd75f'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">'data_batch_2'</span><span class="token punctuation">,</span> <span class="token string">'d4bba439e000b95fd0a9bffe97cbabec'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">'data_batch_3'</span><span class="token punctuation">,</span> <span class="token string">'54ebc095f3ab1f0389bbae665268c751'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">'data_batch_4'</span><span class="token punctuation">,</span> <span class="token string">'634d18415352ddfa80567beed471001a'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">'data_batch_5'</span><span class="token punctuation">,</span> <span class="token string">'482c414d41f54cd18b22e5b47cb7c3cb'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+
+    test_list <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">[</span><span class="token string">'test_batch'</span><span class="token punctuation">,</span> <span class="token string">'40351d587109b95175f43aff81a1287e'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+    meta <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'filename'</span><span class="token punctuation">:</span> <span class="token string">'batches.meta'</span><span class="token punctuation">,</span>
+        <span class="token string">'key'</span><span class="token punctuation">:</span> <span class="token string">'label_names'</span><span class="token punctuation">,</span>
+        <span class="token string">'md5'</span><span class="token punctuation">:</span> <span class="token string">'5ff9c542aee3614f3951f8cda6e48888'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># dirname 为训练/测试数据地址，使得训练/测试分开</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> transform<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>Cifar10<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>root <span class="token operator">=</span> root
+        self<span class="token punctuation">.</span>train <span class="token operator">=</span> train
+        self<span class="token punctuation">.</span>transform <span class="token operator">=</span> transform
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>train<span class="token punctuation">:</span>
+            data_list <span class="token operator">=</span> self<span class="token punctuation">.</span>train_list
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            data_list <span class="token operator">=</span> self<span class="token punctuation">.</span>test_list
+
+        self<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>targets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+        <span class="token comment"># now load the picked numpy arrays</span>
+        <span class="token keyword">for</span> file_name<span class="token punctuation">,</span> checksum <span class="token keyword">in</span> data_list<span class="token punctuation">:</span>
+            file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root<span class="token punctuation">,</span> self<span class="token punctuation">.</span>base_folder<span class="token punctuation">,</span> file_name<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span>
+            <span class="token keyword">with</span> client<span class="token punctuation">.</span>get_object<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                entry <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'latin1'</span><span class="token punctuation">)</span>
+                self<span class="token punctuation">.</span>data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>entry<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token string">'labels'</span> <span class="token keyword">in</span> entry<span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>targets<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>entry<span class="token punctuation">[</span><span class="token string">'labels'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>targets<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>entry<span class="token punctuation">[</span><span class="token string">'fine_labels'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>data <span class="token operator">=</span> np<span class="token punctuation">.</span>vstack<span class="token punctuation">(</span>self<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>data <span class="token operator">=</span> self<span class="token punctuation">.</span>data<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># convert to HWC</span>
+
+        self<span class="token punctuation">.</span>_load_meta<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">_load_meta</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root<span class="token punctuation">,</span> self<span class="token punctuation">.</span>base_folder<span class="token punctuation">,</span> self<span class="token punctuation">.</span>meta<span class="token punctuation">[</span><span class="token string">'filename'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span>
+        <span class="token keyword">with</span> client<span class="token punctuation">.</span>get_object<span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token keyword">as</span> infile<span class="token punctuation">:</span>
+            data <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>infile<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'latin1'</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>classes <span class="token operator">=</span> data<span class="token punctuation">[</span>self<span class="token punctuation">.</span>meta<span class="token punctuation">[</span><span class="token string">'key'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>class_to_idx <span class="token operator">=</span> <span class="token punctuation">{</span>_class<span class="token punctuation">:</span> i <span class="token keyword">for</span> i<span class="token punctuation">,</span> _class <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>classes<span class="token punctuation">)</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        Args:
+            index (int): Index
+
+        Returns:
+            tuple: (image, target) where target is index of the target class.
+        &quot;&quot;&quot;</span>
+        img<span class="token punctuation">,</span> target <span class="token operator">=</span> self<span class="token punctuation">.</span>data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>targets<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+
+        <span class="token comment"># doing this so that it is consistent with all other datasets</span>
+        <span class="token comment"># to return a PIL Image</span>
+        img <span class="token operator">=</span> Image<span class="token punctuation">.</span>fromarray<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>transform <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            img <span class="token operator">=</span> self<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> img<span class="token punctuation">,</span> target
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.7d404fe5.js" defer></script><script src="/docs/assets/js/2.5978a520.js" defer></script><script src="/docs/assets/js/11.62fc12c3.js" defer></script>
+  </body>
+</html>

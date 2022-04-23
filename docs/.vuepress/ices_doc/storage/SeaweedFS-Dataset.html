@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自定义数据集 | ICES Distributed Training System Tutorial</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="ICES分布式训练系统帮助文档">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.5d9619c0.css" as="style"><link rel="preload" href="/docs/assets/js/app.7d404fe5.js" as="script"><link rel="preload" href="/docs/assets/js/2.5978a520.js" as="script"><link rel="preload" href="/docs/assets/js/14.3da1e842.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.16d4f38b.js"><link rel="prefetch" href="/docs/assets/js/11.62fc12c3.js"><link rel="prefetch" href="/docs/assets/js/12.d57768af.js"><link rel="prefetch" href="/docs/assets/js/13.4903afad.js"><link rel="prefetch" href="/docs/assets/js/15.ce20a153.js"><link rel="prefetch" href="/docs/assets/js/3.c724ef06.js"><link rel="prefetch" href="/docs/assets/js/4.0d7d8041.js"><link rel="prefetch" href="/docs/assets/js/5.8b141ec4.js"><link rel="prefetch" href="/docs/assets/js/6.654a3df5.js"><link rel="prefetch" href="/docs/assets/js/7.b5fa177a.js"><link rel="prefetch" href="/docs/assets/js/8.29da24fc.js"><link rel="prefetch" href="/docs/assets/js/9.510aac33.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.5d9619c0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">ICES Distributed Training System Tutorial</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/docs/storage/" class="nav-link router-link-active">
+  ICES网盘
+</a></div><div class="nav-item"><a href="/docs/pytorch/" class="nav-link">
+  pytorch
+</a></div><div class="nav-item"><a href="https://github.com/DarrenYing/vuepress-element-doc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/docs/storage/" class="nav-link router-link-active">
+  ICES网盘
+</a></div><div class="nav-item"><a href="/docs/pytorch/" class="nav-link">
+  pytorch
+</a></div><div class="nav-item"><a href="https://github.com/DarrenYing/vuepress-element-doc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ICES网盘操作</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/storage/" aria-current="page" class="sidebar-link">ICES网盘系统操作简介</a></li><li><a href="/docs/storage/SeaweedFS-Dataset.html" aria-current="page" class="active sidebar-link">自定义数据集</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/storage/SeaweedFS-Dataset.html#上传数据集" class="sidebar-link">上传数据集</a></li><li class="sidebar-sub-header"><a href="/docs/storage/SeaweedFS-Dataset.html#以cifar10数据集为例" class="sidebar-link">以Cifar10数据集为例</a></li></ul></li><li><a href="/docs/storage/Submit-Project-Task.html" class="sidebar-link">提交任务</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="自定义数据集"><a href="#自定义数据集" class="header-anchor">#</a> 自定义数据集</h1> <h2 id="上传数据集"><a href="#上传数据集" class="header-anchor">#</a> 上传数据集</h2> <blockquote><p>通过 <a href="http://10.249.181.72:8079/file" target="_blank" rel="noopener noreferrer">ICES网盘<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 上传你的数据集，假设路径为<code>/datasets/your_dataset</code>，
+则在代码中使用<code>/home/datasets/your_dataset</code>作为数据集路径，其它代码不变</p></blockquote> <h2 id="以cifar10数据集为例"><a href="#以cifar10数据集为例" class="header-anchor">#</a> 以Cifar10数据集为例</h2> <blockquote><ul><li>上传Cifar10数据集<strong>cifar-10-batches-py</strong>到网盘系统
+<ul><li>假设路径为 <code>/datasets/cifar-10-batches-py</code></li></ul></li> <li>在代码中创建数据集</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> torchvision<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> CIFAR10
+
+trainset <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>
+      root<span class="token operator">=</span><span class="token string">&quot;/home/datasets&quot;</span><span class="token punctuation">,</span>
+      train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+      download<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+      transform<span class="token operator">=</span>transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span>
+          <span class="token punctuation">[</span>
+              transforms<span class="token punctuation">.</span>RandomCrop<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              transforms<span class="token punctuation">.</span>RandomHorizontalFlip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              transforms<span class="token punctuation">.</span>Normalize<span class="token punctuation">(</span>
+                  <span class="token punctuation">(</span><span class="token number">0.4914</span><span class="token punctuation">,</span> <span class="token number">0.4822</span><span class="token punctuation">,</span> <span class="token number">0.4465</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0.2023</span><span class="token punctuation">,</span> <span class="token number">0.1994</span><span class="token punctuation">,</span> <span class="token number">0.2010</span><span class="token punctuation">)</span>
+              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+</code></pre></div></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/storage/" class="prev router-link-active">
+        ICES网盘系统操作简介
+      </a></span> <span class="next"><a href="/docs/storage/Submit-Project-Task.html">
+        提交任务
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.7d404fe5.js" defer></script><script src="/docs/assets/js/2.5978a520.js" defer></script><script src="/docs/assets/js/14.3da1e842.js" defer></script>
+  </body>
+</html>

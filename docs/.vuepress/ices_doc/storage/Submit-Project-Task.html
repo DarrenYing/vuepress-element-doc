@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>提交任务 | ICES Distributed Training System Tutorial</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="ICES分布式训练系统帮助文档">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.5d9619c0.css" as="style"><link rel="preload" href="/docs/assets/js/app.7d404fe5.js" as="script"><link rel="preload" href="/docs/assets/js/2.5978a520.js" as="script"><link rel="preload" href="/docs/assets/js/15.ce20a153.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.16d4f38b.js"><link rel="prefetch" href="/docs/assets/js/11.62fc12c3.js"><link rel="prefetch" href="/docs/assets/js/12.d57768af.js"><link rel="prefetch" href="/docs/assets/js/13.4903afad.js"><link rel="prefetch" href="/docs/assets/js/14.3da1e842.js"><link rel="prefetch" href="/docs/assets/js/3.c724ef06.js"><link rel="prefetch" href="/docs/assets/js/4.0d7d8041.js"><link rel="prefetch" href="/docs/assets/js/5.8b141ec4.js"><link rel="prefetch" href="/docs/assets/js/6.654a3df5.js"><link rel="prefetch" href="/docs/assets/js/7.b5fa177a.js"><link rel="prefetch" href="/docs/assets/js/8.29da24fc.js"><link rel="prefetch" href="/docs/assets/js/9.510aac33.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.5d9619c0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">ICES Distributed Training System Tutorial</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/docs/storage/" class="nav-link router-link-active">
+  ICES网盘
+</a></div><div class="nav-item"><a href="/docs/pytorch/" class="nav-link">
+  pytorch
+</a></div><div class="nav-item"><a href="https://github.com/DarrenYing/vuepress-element-doc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/docs/storage/" class="nav-link router-link-active">
+  ICES网盘
+</a></div><div class="nav-item"><a href="/docs/pytorch/" class="nav-link">
+  pytorch
+</a></div><div class="nav-item"><a href="https://github.com/DarrenYing/vuepress-element-doc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ICES网盘操作</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/storage/" aria-current="page" class="sidebar-link">ICES网盘系统操作简介</a></li><li><a href="/docs/storage/SeaweedFS-Dataset.html" class="sidebar-link">自定义数据集</a></li><li><a href="/docs/storage/Submit-Project-Task.html" aria-current="page" class="active sidebar-link">提交任务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/storage/Submit-Project-Task.html#任务配置信息" class="sidebar-link">任务配置信息</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="提交任务"><a href="#提交任务" class="header-anchor">#</a> 提交任务</h1> <h2 id="任务配置信息"><a href="#任务配置信息" class="header-anchor">#</a> 任务配置信息</h2> <blockquote><ul><li>项目路径
+<ul><li>项目名称相对于根目录的路径，如项目名称为<code>ProjectTest</code>，存放路径为<code>/MyDir/tets/</code>，
+则项目路径为填为<code>MyDir/test/ProjectTest</code></li></ul></li> <li>工作目录
+<ul><li>工作目录为项目启动的主文件在项目中的相对路径前缀，如在<code>ProjectTest</code>项目中，主文件路径为
+<code>ProjectTest/dir1/dir2/main.py</code>，则工作目录填为<code>dir1/dir2</code></li></ul></li> <li>启动命令
+<ul><li>如需要安装包再执行</li></ul> <div class="language- extra-class"><pre class="language-text"><code>pip install -r requirements.txt &amp;&amp; python -m torch.distributed.launch --nproc_per_node=1 --nnodes=1 cifar10_test.py
+</code></pre></div></li> <li>选择镜像
+<ul><li>pytorch/pytorch:1.10-cuda11.3-cudnn8-runtime
+<blockquote><p>extends the base image by adding all the shared libraries from the CUDA toolkit.
+Use this image if you have a pre-built application using multiple CUDA libraries.</p></blockquote></li> <li>pytorch/pytorch:1.10-cuda11.3-cudnn8-devel
+<blockquote><p>extends the runtime image by adding the compiler toolchain, the debugging tools, the headers and the static libraries.</p></blockquote></li> <li>简单来说，runtime镜像更完整，包含编译和调试工具</li></ul></li> <li>任务模式
+<ul><li>分为长时任务和短时任务，目前任选即可</li></ul></li></ul></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/storage/SeaweedFS-Dataset.html" class="prev">
+        自定义数据集
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.7d404fe5.js" defer></script><script src="/docs/assets/js/2.5978a520.js" defer></script><script src="/docs/assets/js/15.ce20a153.js" defer></script>
+  </body>
+</html>

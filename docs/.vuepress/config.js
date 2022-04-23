@@ -1,19 +1,19 @@
 module.exports = {
   theme: '',
-  title: 'Pytorch Distributed Training Tutorial',
-  description: '使用Pytorch分布式训练的示例代码',
-  base: '/',
-  port: '8080',
+  title: 'ICES Distributed Training System Tutorial',
+  description: 'ICES分布式训练系统帮助文档',
+  base: '/docs/',
+  port: '8081',
   themeConfig: {
     nav: [
       {
         text: '首页',
         link: '/'
       },
-      // {
-      //   text: '组件',
-      //   link: '/comps/'
-      // },
+      {
+        text: 'ICES网盘',
+        link: '/storage/'
+      },
       {
         text: 'pytorch',
         link: '/pytorch/'
@@ -24,14 +24,14 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/comps/': [
+      '/storage/': [
         {
-          title: '组件列表一',
+          title: 'ICES网盘操作',
           collapsable: false,
           children: [
-            '/comps/',
-            '/comps/select.md',
-            '/comps/button.md',
+            '/storage/',
+            '/storage/SeaweedFS-Dataset.md',
+            '/storage/Submit-Project-Task.md',
           ]
         },
       ],
@@ -44,8 +44,6 @@ module.exports = {
             '/pytorch/Use-DistributedDataParallel.md',
             '/pytorch/Issue-Record.md',
             '/pytorch/MultiNode-Distributed.md',
-            '/pytorch/SeaweedFS-Dataset.md',
-            '/pytorch/Submit-Project-Task.md',
           ]
         },
       ]
@@ -53,5 +51,6 @@ module.exports = {
   },
   head: [],
   plugins: ['demo-container'],
-  markdown: {}
+  markdown: {},
+  dest: 'docs/.vuepress/ices_doc',
 }

@@ -1,7 +1,7 @@
 module.exports = {
   theme: '',
   title: 'ICES Distributed Training System Tutorial',
-  description: 'ICES分布式训练系统帮助文档',
+  description: '使用ICES网盘系统进行分布式训练',
   base: '/docs/',
   port: '8081',
   themeConfig: {
@@ -30,7 +30,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/storage/',
-            '/storage/SeaweedFS-Dataset.md',
+            '/storage/MinIO-Dataset.md',
             '/storage/Submit-Project-Task.md',
           ]
         },

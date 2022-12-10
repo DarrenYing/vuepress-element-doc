@@ -1,6 +1,6 @@
-# ICES网盘系统操作简介
+# ICES分布式训练系统操作简介
 
-## 网盘入口
-[全部 - ICES网盘](http://10.249.181.72:9080/storage/)
+## 系统入口
+[ICES分布式训练系统](https://www.hitminer.cn/storage/)
 
 

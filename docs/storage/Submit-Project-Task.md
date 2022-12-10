@@ -2,26 +2,25 @@
 
 ## 任务配置信息
 > * 项目路径
->   * 项目名称相对于根目录的路径，如项目名称为```ProjectTest```，存放路径为```/MyDir/tets/```，
+>   * 项目名称相对于根目录的路径，如项目名称为```ProjectTest```，存放路径为```/MyDir/test/```，
 >     则项目路径为填为```MyDir/test/ProjectTest```
-> * 工作目录
->   * 工作目录为项目启动的主文件在项目中的相对路径前缀，如在```ProjectTest```项目中，主文件路径为
->     ```ProjectTest/dir1/dir2/main.py```，则工作目录填为```dir1/dir2```
+> 
+>   * 项目路径通常会自动填充，若没有自动填充，可以尝试关闭任务提交界面，再重新打开
+> * 选择GPU
+>    * 选择所要使用的GPU范围
+>    * 不选择则随机分配，优先分配数据集缓存所在的节点
+> * 数据集路径
+>   * 如果需要对数据集缓存，则填入要缓存的数据集路径，如```/dataset/yourDataset/```，详见**数据集使用**小节
 > * 启动命令
->   * 如需要安装包再执行
+>   * 对于一般任务，则使用正常启动命令即可
 >   ```
->   pip install -r requirements.txt && python -m torch.distributed.launch --nproc_per_node=1 --nnodes=1 main.py
+>   python main.py
 >   ```
->   * 对于一般任务，需要使用 -u 参数以确保日志正常显示
+>   * 多机多卡任务，启动命令如下
+>   ```shell
+>   export NCCL_DEBUG=INFO; export  NCCL_SOCKET_IFNAME=eth0; export NCCL_IB_DISABLE=1; python -m torch.distributed.launch --nproc_per_node=$(nvidia-smi -L | wc -l) --nnodes=$DOCTOR_ALL_NODE --node_rank=$((DOCTOR_NODE_INDEX-1)) --use_env --master_addr=node1 --master_port=29500  main.py
 >   ```
->   python -u main.py
->   ``` 
 > * 选择镜像
->   * pytorch/pytorch:1.10-cuda11.3-cudnn8-runtime
->      > extends the base image by adding all the shared libraries from the CUDA toolkit.
-      Use this image if you have a pre-built application using multiple CUDA libraries.
->   * pytorch/pytorch:1.10-cuda11.3-cudnn8-devel
->     > extends the runtime image by adding the compiler toolchain, the debugging tools, the headers and the static libraries.
->   * 简单来说，runtime镜像更完整，包含编译和调试工具
-> * 任务模式
->   * 分为长时任务和短时任务，目前任选即可
+>   * 10.249.177.55:8084/system_image/default_image:v2.0.3
+>      > 系统提供的默认镜像，包含 pytorch-1.13.0 + cuda-11.7，cv2 等库
+

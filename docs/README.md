@@ -2,6 +2,8 @@
 home: true
 heroImage: https://artice-code-1258339218.cos.ap-beijing.myqcloud.com/vuepress/element-index.png
 heroText: Distributed Training
+actionText: 快速上手 →
+actionLink: /storage/
 features:
 - title: 分布式存储
   details: SeaweedFS数据库

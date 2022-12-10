@@ -32,6 +32,7 @@ module.exports = {
             '/storage/',
             '/storage/MinIO-Dataset.md',
             '/storage/Submit-Project-Task.md',
+            '/storage/Create-Docker-Image.md',
           ]
         },
       ],
